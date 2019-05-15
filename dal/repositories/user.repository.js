@@ -7,13 +7,20 @@ class UserRepository {
     return this._db.users.findAll();
   }
 
+  getUser(id) {
+    return this._db.users.findOne({ where: { id } });
+  }
+
   createUser(user) {
     return this._db.users.create(user);
   }
 
-  updateUser(user) {
-    const { id, name, lastname } = user;
-    return this._db.users.update({ name: name }, { where: { id: id } });
+  updateUser(id, user) {
+    return this._db.users.update(user, { where: { id } });
+  }
+
+  deleteUser(id) {
+    return this._db.users.destroy({ where: { id } });
   }
 }
 

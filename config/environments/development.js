@@ -5,6 +5,7 @@ module.exports = {
     password: "Thenilo2k7!",
     host: "localhost",
     database: "tracker_dev",
-    dialect: "postgres"
+    dialect: "postgres",
+    logging: false
   }
 };
